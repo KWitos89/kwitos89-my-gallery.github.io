@@ -70,15 +70,40 @@ body {
   top: 0;
   left: 0;
   background: rgba(255, 255, 255, 0.5);
-  -webkit-transform: skewX(45deg) translateX(150px);
-          transform: skewX(45deg) translateX(150px);
-  -webkit-transition: .5s linear;
-  transition: .5s linear;
+  -webkit-transform: skewX(-45deg) translateX(150px);
+          transform: skewX(-45deg) translateX(150px);
+  -webkit-animation: flash 3s  linear infinite;
+          animation: flash 3s  linear infinite;
 }
 
-.box:hover::before {
-  -webkit-transform: skewX(45deg) translateX(-150px);
-          transform: skewX(45deg) translateX(-150px);
+@-webkit-keyframes flash {
+  0% {
+    -webkit-transform: translateX(-150px) skewX(-45deg);
+            transform: translateX(-150px) skewX(-45deg);
+  }
+  50% {
+    -webkit-transform: translateX(150px) skewX(-45deg);
+            transform: translateX(150px) skewX(-45deg);
+  }
+  100% {
+    -webkit-transform: translateX(-150px) skewX(-45deg);
+            transform: translateX(-150px) skewX(-45deg);
+  }
+}
+
+@keyframes flash {
+  0% {
+    -webkit-transform: translateX(-150px) skewX(-45deg);
+            transform: translateX(-150px) skewX(-45deg);
+  }
+  50% {
+    -webkit-transform: translateX(150px) skewX(-45deg);
+            transform: translateX(150px) skewX(-45deg);
+  }
+  100% {
+    -webkit-transform: translateX(-150px) skewX(-45deg);
+            transform: translateX(-150px) skewX(-45deg);
+  }
 }
 
 /*mobile styles*/
